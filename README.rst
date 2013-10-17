@@ -6,6 +6,10 @@ Do you have a Go application that you want to run on dotCloud? If so, you have c
 
 If we get enough people to use this custom service, and show support for it, we might be able to convince dotCloud to add native support for Go. So let us know if you use it, and if you want dotCloud to offer a native Go service. 
 
+About the current code
+======================
+The Go application in this projects uses Gorilla Mux to manage the routes and serve the static files in the ``static`` directory at  ``/static``.  All the code is in one file, ``main.go``
+
 Status
 ======
 This is still very early beta so use with caution, and let us know if you have any issues.
@@ -19,9 +23,9 @@ How to use
 ==========
 1. Clone this repo::
     
-    $  git clone git://github.com/kencochrane/golang-on-dotcloud.git
+    $  git clone git://github.com/didiercrunch/golang-on-dotcloud.git
 
-2. Put your Go source code under the ``src`` directory.
+2. Change the source code
 
 3. Change the ``dotcloud.yml``
     a. Change the ``build_package`` config variable, to the name of your Go package

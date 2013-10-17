@@ -68,13 +68,15 @@ install_application() {
     msg "moving $start_dir/profile to ~/"
     mv $start_dir/profile ~/
 
+    msg "creating go directory"
+    mkdir -p ~/current/src/$SERVICE_CONFIG_BUILD_PACKAGE
     # Use ~/code and ~/current like the regular python service for better compatibility
     msg "installing application to ~/current/ from $start_dir"
-    rsync -avH --delete --exclude "data" --exclude "README.rst" --exclude "golang" * ~/current/
+    rsync -avH --delete --exclude "data" --exclude "README.rst" --exclude "golang" * ~/current/src/$SERVICE_CONFIG_BUILD_PACKAGE
 }
 
 compile_application(){
-    go install $SERVICE_CONFIG_BUILD_PACKAGE
+    go get $SERVICE_CONFIG_BUILD_PACKAGE
 }
 
 # lets get started.

@@ -1,9 +1,13 @@
+--- 
 golang:
-    type: custom
-    buildscript: golang/builder
-    processes:
-        hello: ~/current/bin/hello
-    ports:
-        www: http
-    config:
-        build_package: hello
+  type: custom
+  buildscript: deploy/builder
+  config: 
+    build_package: github.com/didiercrunch/golang-on-dotcloud
+  environment:
+    STATIC_DIR: /home/dotcloud/current/src/github.com/didiercrunch/golang-on-dotcloud/static
+  ports: 
+    www: http
+  processes: 
+    hello: ~/current/bin/dotcloud
+
